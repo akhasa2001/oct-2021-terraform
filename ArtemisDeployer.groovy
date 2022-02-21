@@ -1,5 +1,5 @@
 node {
-	properties([parameters([choice(choices: ['54.82.171.155', '34.229.148.18', '54.234.188.67'], description: 'Please provide the IP ', name: 'ENVIR'), choice(choices: ['1.0.0', '2.0.0', '3.0.0'], description: 'Please choose app version', name: 'APP_VERSION')])])
+	properties([parameters([choice(choices: ['3.86.16.146', '34.230.37.250', '3.83.86.90'], description: 'Please provide the IP ', name: 'ENVIR'), choice(choices: ['1.0.0', '2.0.0', '3.0.0'], description: 'Please choose app version', name: 'APP_VERSION')])])
 	
     
     
