@@ -1,5 +1,9 @@
 node {
-	properties([parameters([choice(choices: ['3.86.16.146', '34.230.37.250', '3.83.86.90'], description: 'Please provide the IP ', name: 'ENVIR'), choice(choices: ['1.0.0', '2.0.0', '3.0.0'], description: 'Please choose app version', name: 'APP_VERSION')])])
+properties([parameters([string(defaultValue: '3.86.16.146', description: 'Please provide IP address', name: 'IP')
+		description: 'Please provide the IP ', name: 'ENVIR'), choice(choices: [
+			'1.0.0', 
+			'2.0.0', 
+			'3.0.0'], description: 'Please choose app version', name: 'APP_VERSION')])])
 	
     
     
@@ -9,7 +13,7 @@ node {
     stage("Stage1"){
 		timestamps {
 			ws {
-				checkout([$class: 'GitSCM', branches: [[name: '${Version}']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/farrukh90/artemis.git']]])
+				checkout([$class: 'GitSCM', branches: [[name: '${Version}']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/akhasa2001/artemis.git']]])
 				}
 			}
 		}
